@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64F6E6462DCEAE0600CE30DC /* cpPolyline.c in Sources */ = {isa = PBXBuildFile; fileRef = 64F6E6442DCEAE0600CE30DC /* cpPolyline.c */; };
+		64F6E6472DCEAE0600CE30DC /* cpMarch.c in Sources */ = {isa = PBXBuildFile; fileRef = 64F6E6432DCEAE0600CE30DC /* cpMarch.c */; };
+		64F6E6482DCEAE0600CE30DC /* cpRobust.c in Sources */ = {isa = PBXBuildFile; fileRef = 64F6E6452DCEAE0600CE30DC /* cpRobust.c */; };
+		64F6E6492DCEAE0600CE30DC /* cpHastySpace.c in Sources */ = {isa = PBXBuildFile; fileRef = 64F6E6422DCEAE0600CE30DC /* cpHastySpace.c */; };
 		7A5948EC19E3798200F65F90 /* chipmunk.c in Sources */ = {isa = PBXBuildFile; fileRef = B759E5111880C4C300E8166C /* chipmunk.c */; };
 		7A5948EE19E3798200F65F90 /* cpArray.c in Sources */ = {isa = PBXBuildFile; fileRef = B759E5061880C46000E8166C /* cpArray.c */; };
 		7A5948EF19E3798200F65F90 /* cpHashSet.c in Sources */ = {isa = PBXBuildFile; fileRef = B759E5071880C46000E8166C /* cpHashSet.c */; };
@@ -43,6 +47,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64F6E6422DCEAE0600CE30DC /* cpHastySpace.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = cpHastySpace.c; path = external/Chipmunk/src/cpHastySpace.c; sourceTree = "<group>"; };
+		64F6E6432DCEAE0600CE30DC /* cpMarch.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = cpMarch.c; path = external/Chipmunk/src/cpMarch.c; sourceTree = "<group>"; };
+		64F6E6442DCEAE0600CE30DC /* cpPolyline.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = cpPolyline.c; path = external/Chipmunk/src/cpPolyline.c; sourceTree = "<group>"; };
+		64F6E6452DCEAE0600CE30DC /* cpRobust.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = cpRobust.c; path = external/Chipmunk/src/cpRobust.c; sourceTree = "<group>"; };
 		7A5948D819E3795700F65F90 /* libObjectiveChipmunk-Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libObjectiveChipmunk-Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B759E4BF1880C24A00E8166C /* cpSpace.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = cpSpace.c; path = external/Chipmunk/src/cpSpace.c; sourceTree = "<group>"; };
 		B759E4C01880C24A00E8166C /* cpSpaceComponent.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = cpSpaceComponent.c; path = external/Chipmunk/src/cpSpaceComponent.c; sourceTree = "<group>"; };
@@ -227,6 +235,10 @@
 		D3E5F0170AA32EAC004E361B = {
 			isa = PBXGroup;
 			children = (
+				64F6E6422DCEAE0600CE30DC /* cpHastySpace.c */,
+				64F6E6432DCEAE0600CE30DC /* cpMarch.c */,
+				64F6E6442DCEAE0600CE30DC /* cpPolyline.c */,
+				64F6E6452DCEAE0600CE30DC /* cpRobust.c */,
 				B759E5141880C4ED00E8166C /* TODO.txt */,
 				B759E5151880C4ED00E8166C /* VERSION.txt */,
 				B759E5131880C4DD00E8166C /* chipmunk-docs.textile */,
@@ -341,6 +353,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64F6E6462DCEAE0600CE30DC /* cpPolyline.c in Sources */,
+				64F6E6472DCEAE0600CE30DC /* cpMarch.c in Sources */,
+				64F6E6482DCEAE0600CE30DC /* cpRobust.c in Sources */,
+				64F6E6492DCEAE0600CE30DC /* cpHastySpace.c in Sources */,
 				7A5948EC19E3798200F65F90 /* chipmunk.c in Sources */,
 				7A5948EE19E3798200F65F90 /* cpArray.c in Sources */,
 				7A5948EF19E3798200F65F90 /* cpHashSet.c in Sources */,
@@ -393,7 +409,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -409,7 +424,6 @@
 					"\"$(SRCROOT)/external/Chipmunk/include\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DDEBUG";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -429,7 +443,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				EXECUTABLE_PREFIX = lib;
@@ -469,6 +482,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -485,9 +499,8 @@
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/external/Chipmunk/include\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MACOSX_DEPLOYMENT_TARGET = 11.5;
-				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DDEBUG";
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 				WARNING_CFLAGS = (
 					"-Wall",
 					"-W",
@@ -520,6 +533,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -535,9 +549,8 @@
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/external/Chipmunk/include\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MACOSX_DEPLOYMENT_TARGET = 11.5;
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNDEBUG";
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 				WARNING_CFLAGS = (
 					"-Wall",
 					"-W",
