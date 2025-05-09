@@ -301,12 +301,12 @@
 
 @implementation CCActionCallBlock
 
-+(id) actionWithBlock:(void(^)())block
++(id) actionWithBlock:(void(^)(void))block
 {
 	return [[self alloc] initWithBlock:block];
 }
 
--(id) initWithBlock:(void(^)())block
+-(id) initWithBlock:(void(^)(void))block
 {
 	if ((self = [super init]))
 		_block = [block copy];

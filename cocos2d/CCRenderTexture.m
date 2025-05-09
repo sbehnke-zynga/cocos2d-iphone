@@ -127,7 +127,7 @@
 
 		_contentScale = [CCDirector sharedDirector].contentScaleFactor;
 		[self setContentSize:CGSizeMake(width, height)];
-		_pixelFormat = format;
+		_pixelFormat = (GLenum)format;
 		_depthStencilFormat = depthStencilFormat;
 
 		self.projection = GLKMatrix4MakeOrtho(0.0f, width, 0.0f, height, -1024.0f, 1024.0f);

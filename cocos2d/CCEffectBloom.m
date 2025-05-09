@@ -348,8 +348,8 @@
         pass.shaderUniforms[CCShaderUniformTexCoord1Extents] = [NSValue valueWithGLKVector2:pass.texCoord1Extents];
 
         pass.shaderUniforms[weakSelf.uniformTranslationTable[@"u_enableGlowMap"]] = [NSNumber numberWithFloat:0.0f];
-        pass.shaderUniforms[weakSelf.uniformTranslationTable[@"u_luminanceThreshold"]] = [NSNumber numberWithFloat:_luminanceThreshold];
-        pass.shaderUniforms[weakSelf.uniformTranslationTable[@"u_intensity"]] = [NSNumber numberWithFloat:_transformedIntensity];
+        pass.shaderUniforms[weakSelf.uniformTranslationTable[@"u_luminanceThreshold"]] = [NSNumber numberWithFloat:self->_luminanceThreshold];
+        pass.shaderUniforms[weakSelf.uniformTranslationTable[@"u_intensity"]] = [NSNumber numberWithFloat:self->_transformedIntensity];
         
         GLKVector2 dur = GLKVector2Make(1.0 / (previousPassTexture.pixelWidth / previousPassTexture.contentScale), 0.0);
         pass.shaderUniforms[weakSelf.uniformTranslationTable[@"u_blurDirection"]] = [NSValue valueWithGLKVector2:dur];
@@ -368,7 +368,7 @@
         
         pass.shaderUniforms[weakSelf.uniformTranslationTable[@"u_enableGlowMap"]] = [NSNumber numberWithFloat:0.0f];
         pass.shaderUniforms[weakSelf.uniformTranslationTable[@"u_luminanceThreshold"]] = [NSNumber numberWithFloat:0.0f];
-        pass.shaderUniforms[weakSelf.uniformTranslationTable[@"u_intensity"]] = [NSNumber numberWithFloat:_transformedIntensity];
+        pass.shaderUniforms[weakSelf.uniformTranslationTable[@"u_intensity"]] = [NSNumber numberWithFloat:self->_transformedIntensity];
         
         GLKVector2 dur = GLKVector2Make(0.0, 1.0 / (previousPassTexture.pixelHeight / previousPassTexture.contentScale));
         pass.shaderUniforms[weakSelf.uniformTranslationTable[@"u_blurDirection"]] = [NSValue valueWithGLKVector2:dur];
@@ -391,7 +391,7 @@
 
         pass.shaderUniforms[weakSelf.uniformTranslationTable[@"u_enableGlowMap"]] = [NSNumber numberWithFloat:1.0f];
         pass.shaderUniforms[weakSelf.uniformTranslationTable[@"u_luminanceThreshold"]] = [NSNumber numberWithFloat:0.0f];
-        pass.shaderUniforms[weakSelf.uniformTranslationTable[@"u_intensity"]] = [NSNumber numberWithFloat:_transformedIntensity];
+        pass.shaderUniforms[weakSelf.uniformTranslationTable[@"u_intensity"]] = [NSNumber numberWithFloat:self->_transformedIntensity];
         
     } copy]];
 

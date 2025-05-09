@@ -114,18 +114,18 @@ simple macro that swaps 2 variables
 /** @def CCRANDOM_MINUS1_1
  Returns a random float between -1 and 1.
  */
-static inline float CCRANDOM_MINUS1_1(){ return (random() / (float)0x3fffffff ) - 1.0f; }
+static inline float CCRANDOM_MINUS1_1(void){ return (random() / (float)0x3fffffff ) - 1.0f; }
 
 /** @def CCRANDOM_0_1
  Returns a random float between 0 and 1.
  */
-static inline float CCRANDOM_0_1(){ return random() / (float)0x7fffffff;}
+static inline float CCRANDOM_0_1(void){ return random() / (float)0x7fffffff;}
 
 /** @def CCRANDOM_IN_UNIT_CIRCLE
  Returns a random CGPoint with a length less than 1.0.
  */
 static inline CGPoint
-CCRANDOM_IN_UNIT_CIRCLE()
+CCRANDOM_IN_UNIT_CIRCLE(void)
 {
 	while(TRUE){
 		CGPoint p = ccp(CCRANDOM_MINUS1_1(), CCRANDOM_MINUS1_1());
@@ -137,7 +137,7 @@ CCRANDOM_IN_UNIT_CIRCLE()
  Returns a random CGPoint with a length equal to 1.0.
  */
 static inline CGPoint
-CCRANDOM_ON_UNIT_CIRCLE()
+CCRANDOM_ON_UNIT_CIRCLE(void)
 {
 	while(TRUE){
 		CGPoint p = ccp(CCRANDOM_MINUS1_1(), CCRANDOM_MINUS1_1());
@@ -173,7 +173,7 @@ extern CGFloat __ccContentScaleFactor;
 
 /// Deprecated in favor of using CCDirector.contentScaleFactor or CCTexture2D.contentScale depending on usage.
 static inline CGFloat DEPRECATED_ATTRIBUTE
-CC_CONTENT_SCALE_FACTOR()
+CC_CONTENT_SCALE_FACTOR(void)
 {
 	return __ccContentScaleFactor;
 }

@@ -196,6 +196,7 @@
 //	[self setNeedsDisplay:YES];
 	
 	[self unlockOpenGLContext];
+    [super reshape];
 }
 
 

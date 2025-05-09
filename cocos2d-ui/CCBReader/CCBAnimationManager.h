@@ -28,10 +28,10 @@
 #import "CCAnimationManager.h"
 
 //This has been replaced by CCAnimationManager
-__attribute__ ((deprecated))
-@interface CCBAnimationManager : CCAnimationManager
-{
-    
-}
-
-@end
+//__attribute__ ((deprecated))
+//@interface CCBAnimationManager : CCAnimationManager
+//{
+//    
+//}
+//
+//@end

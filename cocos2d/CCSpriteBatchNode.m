@@ -32,53 +32,53 @@
 #import "CCTextureCache.h"
 #import "CCNode_Private.h"
 
-@implementation CCSpriteBatchNode {
-}
-
-+(id)batchNodeWithTexture:(CCTexture *)tex
-{
-	return [[self alloc] initWithTexture:tex capacity:0];
-}
-
-+(id)batchNodeWithTexture:(CCTexture *)tex capacity:(NSUInteger)capacity
-{
-	return [[self alloc] initWithTexture:tex capacity:capacity];
-}
-
-+(id)batchNodeWithFile:(NSString*)fileImage capacity:(NSUInteger)capacity
-{
-	return [[self alloc] initWithFile:fileImage capacity:capacity];
-}
-
-+(id)batchNodeWithFile:(NSString*) imageFile
-{
-	return [[self alloc] initWithFile:imageFile capacity:0];
-}
-
--(id)init
-{
-    return [self initWithTexture:[[CCTexture alloc] init] capacity:0];
-}
-
--(id)initWithFile:(NSString *)fileImage capacity:(NSUInteger)capacity
-{
-	CCTexture *tex = [[CCTextureCache sharedTextureCache] addImage:fileImage];
-	return [self initWithTexture:tex capacity:capacity];
-}
-
-// Designated initializer
--(id)initWithTexture:(CCTexture *)tex capacity:(NSUInteger)capacity
-{
-	if( (self=[super init])) {
-		self.texture = tex;
-	}
-
-	return self;
-}
-
-- (NSString*) description
-{
-	return [NSString stringWithFormat:@"<%@ = %p | Tag = %@>", [self class], self, _name ];
-}
-
-@end
+//@implementation CCSpriteBatchNode {
+//}
+//
+//+(id)batchNodeWithTexture:(CCTexture *)tex
+//{
+//	return [[self alloc] initWithTexture:tex capacity:0];
+//}
+//
+//+(id)batchNodeWithTexture:(CCTexture *)tex capacity:(NSUInteger)capacity
+//{
+//	return [[self alloc] initWithTexture:tex capacity:capacity];
+//}
+//
+//+(id)batchNodeWithFile:(NSString*)fileImage capacity:(NSUInteger)capacity
+//{
+//	return [[self alloc] initWithFile:fileImage capacity:capacity];
+//}
+//
+//+(id)batchNodeWithFile:(NSString*) imageFile
+//{
+//	return [[self alloc] initWithFile:imageFile capacity:0];
+//}
+//
+//-(id)init
+//{
+//    return [self initWithTexture:[[CCTexture alloc] init] capacity:0];
+//}
+//
+//-(id)initWithFile:(NSString *)fileImage capacity:(NSUInteger)capacity
+//{
+//	CCTexture *tex = [[CCTextureCache sharedTextureCache] addImage:fileImage];
+//	return [self initWithTexture:tex capacity:capacity];
+//}
+//
+//// Designated initializer
+//-(id)initWithTexture:(CCTexture *)tex capacity:(NSUInteger)capacity
+//{
+//	if( (self=[super init])) {
+//		self.texture = tex;
+//	}
+//
+//	return self;
+//}
+//
+//- (NSString*) description
+//{
+//	return [NSString stringWithFormat:@"<%@ = %p | Tag = %@>", [self class], self, _name ];
+//}
+//
+//@end

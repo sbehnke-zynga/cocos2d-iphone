@@ -308,7 +308,7 @@ static const CCRenderCommandDrawMode GLDrawModes[] = {
 	CCRenderStateGLTransition((CCRenderStateGL *)_renderState, renderer, (CCRenderStateGL *)renderer->_renderState);
 	renderer->_renderState = _renderState;
 	
-	glDrawElements(GLDrawModes[_mode], (GLsizei)_count, GL_UNSIGNED_SHORT, (GLvoid *)(_firstIndex*sizeof(GLushort)));
+	glDrawElements((GLenum)GLDrawModes[_mode], (GLsizei)_count, GL_UNSIGNED_SHORT, (GLvoid *)(_firstIndex*sizeof(GLushort)));
 	CC_INCREMENT_GL_DRAWS(1);
 	
 	CCGL_DEBUG_POP_GROUP_MARKER();

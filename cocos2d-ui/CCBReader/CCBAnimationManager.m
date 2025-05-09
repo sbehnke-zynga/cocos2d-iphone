@@ -25,7 +25,7 @@
 
 #import "CCBAnimationManager.h"
 
-@implementation CCBAnimationManager
-
-
-@end
+//@implementation CCBAnimationManager
+//
+//
+//@end

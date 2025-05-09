@@ -266,36 +266,36 @@
 {
     if (spriteFrame)
     {
-        [_backgroundSpriteFrames setObject:spriteFrame forKey:[NSNumber numberWithInt:state]];
+        [_backgroundSpriteFrames setObject:spriteFrame forKey:[NSNumber numberWithInt:(int)state]];
     }
     else
     {
-        [_backgroundSpriteFrames removeObjectForKey:[NSNumber numberWithInt:state]];
+        [_backgroundSpriteFrames removeObjectForKey:[NSNumber numberWithInt:(int)state]];
     }
     [self stateChanged];
 }
 
 - (CCSpriteFrame*) backgroundSpriteFrameForState:(CCControlState)state
 {
-    return [_backgroundSpriteFrames objectForKey:[NSNumber numberWithInt:state]];
+    return [_backgroundSpriteFrames objectForKey:[NSNumber numberWithInt:(int)state]];
 }
 
 - (void) setHandleSpriteFrame:(CCSpriteFrame*)spriteFrame forState:(CCControlState)state
 {
     if (spriteFrame)
     {
-        [_handleSpriteFrames setObject:spriteFrame forKey:[NSNumber numberWithInt:state]];
+        [_handleSpriteFrames setObject:spriteFrame forKey:[NSNumber numberWithInt:(int)state]];
     }
     else
     {
-        [_handleSpriteFrames removeObjectForKey:[NSNumber numberWithInt:state]];
+        [_handleSpriteFrames removeObjectForKey:[NSNumber numberWithInt:(int)state]];
     }
     [self stateChanged];
 }
 
 - (CCSpriteFrame*) handleSpriteFrameForState:(CCControlState)state
 {
-    return [_handleSpriteFrames objectForKey:[NSNumber numberWithInt:state]];
+    return [_handleSpriteFrames objectForKey:[NSNumber numberWithInt:(int)state]];
 }
 
 #pragma mark Setting properties by name

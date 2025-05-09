@@ -225,7 +225,7 @@ SetProgram(CCNode *n, CCShader *p, NSNumber *alpha) {
 			//     never draw it into the frame buffer
 			//     if not in inverted mode: set the current layer value to 0 in the stencil buffer
 			//     if in inverted mode: set the current layer value to 1 in the stencil buffer
-			glClearStencil(_inverted ? ~0 : 0);
+            glClearStencil(self->_inverted ? ~0 : 0);
 			glClear(GL_STENCIL_BUFFER_BIT);
 			
 			///////////////////////////////////
@@ -237,7 +237,7 @@ SetProgram(CCNode *n, CCShader *p, NSNumber *alpha) {
 			//     if not in inverted mode: set the current layer value to 1 in the stencil buffer
 			//     if in inverted mode: set the current layer value to 0 in the stencil buffer
 			glStencilFunc(GL_NEVER, mask_layer, mask_layer);
-			glStencilOp(_inverted ? GL_ZERO : GL_REPLACE, GL_KEEP, GL_KEEP);
+            glStencilOp(self->_inverted ? GL_ZERO : GL_REPLACE, GL_KEEP, GL_KEEP);
 			
 //			NSLog(@"Stencil setup.");
 		} globalSortOrder:NSIntegerMin debugLabel:@"CCClippingNode: Setup Stencil" threadSafe:NO];

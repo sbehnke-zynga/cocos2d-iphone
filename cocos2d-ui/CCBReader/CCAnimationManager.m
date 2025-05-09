@@ -949,7 +949,7 @@ static NSInteger ccbAnimationManagerID = 0;
     // Create Sequence Property
     CCBSequenceProperty* sequenceProperty = [[CCBSequenceProperty alloc] init];
     [sequenceProperty setName:propertyName];
-    [sequenceProperty setType:propertyType];
+    [sequenceProperty setType:(int)propertyType];
     
     // Keyframe total time
     float duration = 0.0f;

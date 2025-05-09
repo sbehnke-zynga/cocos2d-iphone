@@ -58,62 +58,62 @@
 -(NSUInteger) addChildHelper:(CCNode*)child z:(NSInteger)z name:(NSString*)name;
 @end
 
-@implementation CCParticleBatchNode
-
-/*
- * creation with CCTexture2D
- */
-+(id)batchNodeWithTexture:(CCTexture *)tex
-{
-	return [[self alloc] initWithTexture:tex capacity:kCCParticleDefaultCapacity];
-}
-
-+(id)batchNodeWithTexture:(CCTexture *)tex capacity:(NSUInteger) capacity
-{ 
-	return [[self alloc] initWithTexture:tex capacity:capacity];
-}
-
-/*
- * creation with File Image
- */
-+(id)batchNodeWithFile:(NSString*)fileImage capacity:(NSUInteger)capacity
-{
-	return [[self alloc] initWithFile:fileImage capacity:capacity];
-}
-
-+(id)batchNodeWithFile:(NSString*) imageFile
-{
-	return [[self alloc] initWithFile:imageFile capacity:kCCParticleDefaultCapacity];
-}
-
-/*
- * init with CCTexture2D
- */
--(id)initWithTexture:(CCTexture *)tex capacity:(NSUInteger)capacity
-{
-	if (self = [super init])
-	{
-		self.texture = tex;
-
-		// no lazy alloc in this node
-		_children = [[NSMutableArray alloc] initWithCapacity:capacity];
-	}
-
-	return self;
-}
-
-/*
- * init with FileImage
- */
--(id)initWithFile:(NSString *)fileImage capacity:(NSUInteger)capacity
-{
-	CCTexture *tex = [[CCTextureCache sharedTextureCache] addImage:fileImage];
-	return [self initWithTexture:tex capacity:capacity];
-}
-
--(NSString*) description
-{
-	return [NSString stringWithFormat:@"<%@ = %p | Tag = %@>", [self class], self, _name ];
-}
-
-@end
+//@implementation CCParticleBatchNode
+//
+///*
+// * creation with CCTexture2D
+// */
+//+(id)batchNodeWithTexture:(CCTexture *)tex
+//{
+//	return [[self alloc] initWithTexture:tex capacity:kCCParticleDefaultCapacity];
+//}
+//
+//+(id)batchNodeWithTexture:(CCTexture *)tex capacity:(NSUInteger) capacity
+//{ 
+//	return [[self alloc] initWithTexture:tex capacity:capacity];
+//}
+//
+///*
+// * creation with File Image
+// */
+//+(id)batchNodeWithFile:(NSString*)fileImage capacity:(NSUInteger)capacity
+//{
+//	return [[self alloc] initWithFile:fileImage capacity:capacity];
+//}
+//
+//+(id)batchNodeWithFile:(NSString*) imageFile
+//{
+//	return [[self alloc] initWithFile:imageFile capacity:kCCParticleDefaultCapacity];
+//}
+//
+///*
+// * init with CCTexture2D
+// */
+//-(id)initWithTexture:(CCTexture *)tex capacity:(NSUInteger)capacity
+//{
+//	if (self = [super init])
+//	{
+//		self.texture = tex;
+//
+//		// no lazy alloc in this node
+//		_children = [[NSMutableArray alloc] initWithCapacity:capacity];
+//	}
+//
+//	return self;
+//}
+//
+///*
+// * init with FileImage
+// */
+//-(id)initWithFile:(NSString *)fileImage capacity:(NSUInteger)capacity
+//{
+//	CCTexture *tex = [[CCTextureCache sharedTextureCache] addImage:fileImage];
+//	return [self initWithTexture:tex capacity:capacity];
+//}
+//
+//-(NSString*) description
+//{
+//	return [NSString stringWithFormat:@"<%@ = %p | Tag = %@>", [self class], self, _name ];
+//}
+//
+//@end

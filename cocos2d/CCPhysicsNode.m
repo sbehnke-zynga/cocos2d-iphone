@@ -144,12 +144,12 @@
 	return ccHandler;
 }
 
-static cpBool PhysicsBegin(cpArbiter *arb, cpSpace *space, CCPhysicsCollisionHandler *handler){
+static bool PhysicsBegin(cpArbiter *arb, cpSpace *space, CCPhysicsCollisionHandler *handler){
 	CHIPMUNK_ARBITER_GET_BODIES(arb, bodyA, bodyB);
 	CCPhysicsCollisionPair *pair = handler->_collisionPairSingleton;
 	pair->_arbiter = arb;
 	
-	cpBool (*imp)(id, SEL, id, id, id) = (__typeof(imp))handler->_beginImp;
+	bool (*imp)(id, SEL, id, id, id) = (__typeof(imp))handler->_beginImp;
 	BOOL retval = imp(handler->_delegate, handler->_beginSel, pair, [bodyA.userData node], [bodyB.userData node]);
 	
 	if(!handler->_wildcard){
@@ -169,12 +169,12 @@ static cpBool PhysicsBegin(cpArbiter *arb, cpSpace *space, CCPhysicsCollisionHan
 	_handler->beginFunc = PhysicsBegin;
 }
 
-static cpBool PhysicsPreSolve(cpArbiter *arb, cpSpace *space, CCPhysicsCollisionHandler *handler){
+static bool PhysicsPreSolve(cpArbiter *arb, cpSpace *space, CCPhysicsCollisionHandler *handler){
 	CHIPMUNK_ARBITER_GET_BODIES(arb, bodyA, bodyB);
 	CCPhysicsCollisionPair *pair = handler->_collisionPairSingleton;
 	pair->_arbiter = arb;
 	
-	cpBool (*imp)(id, SEL, id, id, id) = (__typeof(imp))handler->_preSolveImp;
+	bool (*imp)(id, SEL, id, id, id) = (__typeof(imp))handler->_preSolveImp;
 	BOOL retval = imp(handler->_delegate, handler->_preSolveSel, pair, [bodyA.userData node], [bodyB.userData node]);
 	
 	if(!handler->_wildcard){
@@ -545,7 +545,7 @@ ColorForShape(cpShape *shape, CCDrawNode *draw)
 	cpSpaceEachBody_b(_space.space, ^(cpBody *body){
 		if(cpBodyGetType(body) == CP_BODY_TYPE_DYNAMIC){
 			cpVect cog = cpBodyLocalToWorld(body, cpBodyGetCenterOfGravity(body));
-			[_debugDraw drawDot:CPV_TO_CCP(cog) radius:1.5 color:[CCColor colorWithRed:1 green:1 blue:0 alpha:1]];
+            [self->_debugDraw drawDot:CPV_TO_CCP(cog) radius:1.5 color:[CCColor colorWithRed:1 green:1 blue:0 alpha:1]];
 		}
 	});
 }

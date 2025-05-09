@@ -497,7 +497,7 @@
 			int inflatedLen = ccInflateMemoryWithHint(buffer, len, &deflated, sizeHint);
 			NSAssert( inflatedLen == sizeHint, @"CCTMXXMLParser: Hint failed!");
 
-			inflatedLen = (int)&inflatedLen; // XXX: to avoid warings in compiler
+//			inflatedLen = (int)&inflatedLen; // XXX: to avoid warings in compiler
 
 			free( buffer );
 

@@ -330,10 +330,10 @@ static GLKVector2 selectTexCoordPadding(CCEffectTexCoordSource tcSource, GLKVect
     GLuint fbo = rt.FBO;
     
     [renderer enqueueBlock:^{
-        glGetFloatv(GL_VIEWPORT, _oldViewport.v);
+        glGetFloatv(GL_VIEWPORT, self->_oldViewport.v);
         glViewport(0, 0, pixelSize.width, pixelSize.height );
         
-        glGetIntegerv(GL_FRAMEBUFFER_BINDING, &_oldFBO);
+        glGetIntegerv(GL_FRAMEBUFFER_BINDING, &self->_oldFBO);
         glBindFramebuffer(GL_FRAMEBUFFER, fbo);
         
     } globalSortOrder:NSIntegerMin debugLabel:@"CCEffectRenderer: Bind FBO" threadSafe:NO];
@@ -342,8 +342,8 @@ static GLKVector2 selectTexCoordPadding(CCEffectTexCoordSource tcSource, GLKVect
 - (void)restoreRenderTargetWithRenderer:(CCRenderer *)renderer
 {
     [renderer enqueueBlock:^{
-        glBindFramebuffer(GL_FRAMEBUFFER, _oldFBO);
-        glViewport(_oldViewport.v[0], _oldViewport.v[1], _oldViewport.v[2], _oldViewport.v[3]);
+        glBindFramebuffer(GL_FRAMEBUFFER, self->_oldFBO);
+        glViewport(self->_oldViewport.v[0], self->_oldViewport.v[1], self->_oldViewport.v[2], self->_oldViewport.v[3]);
     } globalSortOrder:NSIntegerMax debugLabel:@"CCEffectRenderer: Restore FBO" threadSafe:NO];
     
 }

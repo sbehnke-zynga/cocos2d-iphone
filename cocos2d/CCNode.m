@@ -1860,21 +1860,21 @@ CheckDefaultUniforms(NSDictionary *uniforms, CCTexture *texture)
 	}
 }
 
--(ccBlendFunc)blendFunc
-{
-	return (ccBlendFunc){
-		[_blendMode.options[CCBlendFuncSrcColor] unsignedIntValue],
-		[_blendMode.options[CCBlendFuncDstColor] unsignedIntValue],
-	};
-}
-
--(void)setBlendFunc:(ccBlendFunc)blendFunc
-{
-	self.blendMode = [CCBlendMode blendModeWithOptions:@{
-		CCBlendFuncSrcColor: @(blendFunc.src),
-		CCBlendFuncDstColor: @(blendFunc.dst),
-	}];
-}
+//-(ccBlendFunc)blendFunc
+//{
+//	return (ccBlendFunc){
+//		[_blendMode.options[CCBlendFuncSrcColor] unsignedIntValue],
+//		[_blendMode.options[CCBlendFuncDstColor] unsignedIntValue],
+//	};
+//}
+//
+//-(void)setBlendFunc:(ccBlendFunc)blendFunc
+//{
+//	self.blendMode = [CCBlendMode blendModeWithOptions:@{
+//		CCBlendFuncSrcColor: @(blendFunc.src),
+//		CCBlendFuncDstColor: @(blendFunc.dst),
+//	}];
+//}
 
 -(CCTexture*)texture
 {

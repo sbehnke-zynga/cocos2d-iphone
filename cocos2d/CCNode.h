@@ -40,7 +40,7 @@
 @class CCActionManager;
 @class CCAction;
 @class CCPhysicsBody;
-@class CCBAnimationManager;
+//@class CCBAnimationManager;
 @class CCAnimationManager;
 
 /** CCNode is the base class for all objects displayed by Cocos2d. The nodes are hierachically organized in a tree, normally with a CCScene as its root node. Example of CCNode:s are CCSprite, CCScene and CCButton. The CCNode handles transformations, can have a content size and provides a coordinate system to its children. Any CCNode or subclass can handle user interaction, such as touches and mouse events, see the CCResponder for more information on this.

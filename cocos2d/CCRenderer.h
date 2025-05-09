@@ -63,7 +63,7 @@ CCRenderCheckVisbility(const GLKMatrix4 *transform, GLKVector2 center, GLKVector
 
 /// Enqueue a block that performs GL commands. The debugLabel is optional and will show up in in the GLES frame debugger.
 /// Enqueued commands are sorted by their globalSortOrder value before rendering. Currently this value is 0 for everything except custom draw methods.
--(void)enqueueBlock:(void (^)())block globalSortOrder:(NSInteger)globalSortOrder debugLabel:(NSString *)debugLabel threadSafe:(BOOL)threadSafe;
+-(void)enqueueBlock:(void (^)(void))block globalSortOrder:(NSInteger)globalSortOrder debugLabel:(NSString *)debugLabel threadSafe:(BOOL)threadSafe;
 
 /// Enqueue a method that performs GL commands.
 /// Enqueued commands are sorted by their globalSortOrder value before rendering. Currently this value is 0 for everything except custom draw methods.
